@@ -1,4 +1,5 @@
 require_relative 'slots'
+require_relative 'high_low'
 
 class GameMenu
 
@@ -19,7 +20,8 @@ class GameMenu
       @slot_game = Slots.new
       @slot_game.start_game
     when 2
-      puts "selecting high low module"
+      @high_low_game = HighLow.new
+      @high_low_game.start_game
     when 3
       exit
     else

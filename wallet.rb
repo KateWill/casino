@@ -13,13 +13,13 @@ class Wallet
   end
 
   def lose_bet
-    @balance = @balance - @bet.to_f
-    puts @balance.to_f
+    @new_balance = @balance - @bet.to_f
+    puts @new_balance.to_f
   end
 
   def win_bet
-    @balance = @balance * 2
-    puts @balance.to_f
+    @new_balance = @balance * 2
+    puts @new_balance.to_f
   end
 
 end
