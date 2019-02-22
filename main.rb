@@ -29,7 +29,7 @@
 require_relative 'player'
 require_relative 'wallet'
 require_relative 'menu'
-
+require 'sounder'
 
 
 

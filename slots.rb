@@ -1,4 +1,5 @@
 require_relative 'wallet'
+require_relative 'game_menu'
 
 class Slots
   
@@ -7,7 +8,6 @@ class Slots
     puts "Enter your bet:"
     @bet = gets.to_f
     spin
-    display_result
   end
 
   def spin
@@ -16,15 +16,26 @@ class Slots
     if @spin_result == 3
       puts "YOU WIN!"
       @wallet.win_bet
+      continue_game
     else
       puts "You LOSE" 
       @wallet.lose_bet
+      continue_game
     end 
     
 
   end
 
-  def display_result
+  def continue_game
+    puts "Would you like to play again? [y]es [n]o"
+    @response =  gets.to_s
+
+    if @response == 'y'
+      spin
+    else
+      @game_menu = GameMenu.new
+      @game_menu.print_menu
+    end
 
   end
 
