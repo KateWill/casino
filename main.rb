@@ -44,5 +44,4 @@ choice = @game_menu.get_user_input
 @game_menu.menu_options(choice)
 
 
-# @wallet = Wallet.new(100.00)
-# @wallet.display_balance
+

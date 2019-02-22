@@ -1,7 +1,6 @@
 require_relative 'slots'
 
 class GameMenu
-   include Slots
 
   def print_menu
     puts '==== Games ===='
@@ -17,7 +16,8 @@ class GameMenu
   def menu_options(choice)
     case choice
     when 1
-      start_game
+      @slot_game = Slots.new
+      @slot_game.start_game
     when 2
       puts "selecting high low module"
     when 3

@@ -8,7 +8,8 @@ class Player
   end
 
   def place_bet
-    puts "placing a bet"
+    puts "Put your money"
+    puts 
   end
 
 end
