@@ -1,4 +1,8 @@
+require_relative 'slots'
+
 class GameMenu
+   include Slots
+
   def print_menu
     puts '==== Games ===='
     puts '1) Slots'
@@ -6,11 +10,17 @@ class GameMenu
     puts '3) Exit'
   end
 
+  def get_user_input
+    gets.to_i
+  end
+
   def menu_options(choice)
     case choice
     when 1
-      puts 'selecting a game to play'
+      start_game
     when 2
+      puts "selecting high low module"
+    when 3
       exit
     else
       'Invalid choice try again'

@@ -30,7 +30,19 @@ require_relative 'player'
 require_relative 'wallet'
 require_relative 'menu'
 
+
+
+
 @menu = Menu.new
 @menu.print_menu
 choice = @menu.get_user_input
 @menu.menu_options(choice)
+
+@game_menu = GameMenu.new
+# @game_menu.print_menu
+choice = @game_menu.get_user_input
+@game_menu.menu_options(choice)
+
+
+# @wallet = Wallet.new(100.00)
+# @wallet.display_balance
