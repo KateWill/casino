@@ -26,7 +26,7 @@ class Menu
      @game_menu.print_menu(@wallet_amount)
     when 2
       puts
-      puts "You have $#{@wallet_amount} in your wallet"
+      puts "You have $#{@wallet_amount.to_s.colorize(:green)} in your wallet"
       puts
       print_menu(@wallet_amount)
     when 3

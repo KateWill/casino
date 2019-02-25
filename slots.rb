@@ -34,13 +34,13 @@ class Slots
   def lose_bet(bet)
     puts "Your bet was: $#{@bet.to_f}"
     @new_balance = @wallet_amount - @bet.to_f
-    puts "Your updated balance is: $#{@new_balance}"
+    puts "Your updated balance is: $#{@new_balance.to_s.colorize(:red)}"
   end
 
   def win_bet(bet)
     puts "Your bet was: #{@bet.to_f}"
     @new_balance = (@bet.to_f * 2) + @wallet_amount
-    puts "Your updated balance is: $#{@new_balance}"
+    puts "Your updated balance is: $#{@new_balance.to_s.colorize(:green)}"
   end
 
   def continue_game
