@@ -25,12 +25,12 @@ class HighLow
   def continue_game
     puts
     puts "Would you like to play again? [y]es [n]o"
-    @response =  gets.to_s.chomp
-    # p @response
+    @continue_response =  gets.to_s.chomp
+    # p @continue_response
 
-    if @response == 'y'
+    if @continue_response == 'y'
       start_game(@new_balance)
-    elsif @response == 'n'
+    elsif @continue_response == 'n'
       @game_menu = GameMenu.new
       @game_menu.print_menu(@new_balance)
       choice = @game_menu.get_user_input
@@ -48,13 +48,13 @@ class HighLow
      puts "First card is: #{@first_card_results.to_s.colorize(:green)}"
      puts 
      puts "Is the next [h]igher or [l]ower?"
-     @response = gets.to_s
-
+     @response = gets.chomp
+    #  p @response
     if @first_card_results < @second_card_results && @response == 'l'
       puts
       puts "Second card is #{@second_card_results.to_s.colorize(:red)}"
       puts
-      puts "You lose!"
+      puts "You LOSE!"
       puts
       lose_bet(@bet)
       continue_game
@@ -70,7 +70,7 @@ class HighLow
       puts
       puts "Second card is #{@second_card_results.to_s.colorize(:red)}"
       puts
-      puts "You lose!"
+      puts "You LOSE!"
       puts
       lose_bet(@bet)
       continue_game
@@ -78,7 +78,7 @@ class HighLow
       puts
       puts "Second card is #{@second_card_results.to_s.colorize(:green)}"
       puts
-      puts "You win!"
+      puts "You WIN!"
       puts
       win_bet(@bet)
       continue_game
