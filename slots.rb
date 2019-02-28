@@ -63,3 +63,4 @@ class Slots
   end
 
 end
+

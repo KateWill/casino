@@ -1,7 +1,15 @@
 require_relative 'wallet'
+require_relative 'card'
+require_relative 'deck'
 require 'colorize'
 
 class HighLow
+  attr_accessor :cards
+
+  def initialize 
+    # Instantiate a new deck
+    @deck = Deck.new
+  end
 
   def start_game(wallet_amount)
     @wallet_amount = wallet_amount
@@ -41,8 +49,15 @@ class HighLow
   end
 
   def draw_card
-     @first_card_results = rand(1..13)
-     @second_card_results = rand(1..13)
+
+    # Instantiate a new deck
+    # c = Card.new
+    # puts c
+    
+    #  @first_card_results = rand(1..13)
+    #  @second_card_results = rand(1..13)
+     @first_card_results = @deck.rand_card
+     @second_card_results = @deck.rand_card
     #  puts String.colors   
      puts     
      puts "First card is: #{@first_card_results.to_s.colorize(:green)}"
@@ -86,3 +101,4 @@ class HighLow
   end
 
 end
+
